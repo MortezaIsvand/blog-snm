@@ -35,7 +35,14 @@ const CreateForm = async () => {
   const tags = await getTags();
 
   const onSubmit = async (data: formData) => {
-    await axios.post(`${process.env.API_URL}/api/posts`, data);
+    // await axios.post(`${process.env.API_URL}/api/posts`, data);
+    await fetch(`${process.env.API_URL}/api/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
     router.push("/");
     router.refresh();
   };
