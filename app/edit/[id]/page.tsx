@@ -8,7 +8,7 @@ interface Props {
 }
 
 const getTags = async () => {
-  const res = await fetch("http://localhost:3000/api/tags", {
+  const res = await fetch(`${process.env.API_URL}/api/tags`, {
     cache: "no-store",
   });
   if (res.ok) return res.json();
@@ -16,7 +16,7 @@ const getTags = async () => {
 };
 
 const getInitialValues = async ({ params }: Props) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${params.id}`, {
+  const res = await fetch(`${process.env.API_URL}/api/posts/${params.id}`, {
     cache: "no-store",
   });
   if (res.ok) return res.json();

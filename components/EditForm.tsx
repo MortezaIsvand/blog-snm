@@ -45,7 +45,7 @@ const EditForm = ({ tags, initialValues, params }: Props) => {
   });
 
   const onSubmit = async (data: formData) => {
-    await axios.patch(`/api/posts/${params.id}`, data);
+    await axios.patch(`${process.env.API_URL}/api/posts/${params.id}`, data);
     router.push("/");
     router.refresh();
   };

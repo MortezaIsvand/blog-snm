@@ -24,7 +24,7 @@ interface Post {
 }
 
 const getPost = async ({ params }: Props): Promise<Post> => {
-  const res = await fetch(`http://localhost:3000/api/posts/${params.id}`, {
+  const res = await fetch(`${process.env.API_URL}/api/posts/${params.id}`, {
     cache: "no-store",
   });
   return res.json();
@@ -48,7 +48,6 @@ const DetailPage = async ({ params }: Props) => {
           <DeleteButton params={params} />
         </div>
         <Views views={post.views} />
-        {/* <Like likes={post.likes} params={params} /> */}
       </div>
       <p className="max-w-md">{post.content}</p>
     </div>

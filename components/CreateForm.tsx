@@ -17,7 +17,7 @@ const schema = z.object({
 type formData = z.infer<typeof schema>;
 
 const getTags = async (): Promise<Tag[]> => {
-  const res = await fetch("http://localhost:3000/api/tags", {
+  const res = await fetch(`${process.env.API_URL}/api/tags`, {
     cache: "no-store",
   });
   return res.json();
@@ -35,7 +35,7 @@ const CreateForm = async () => {
   const tags = await getTags();
 
   const onSubmit = async (data: formData) => {
-    await axios.post("/api/posts", data);
+    await axios.post(`${process.env.API_URL}/api/posts`, data);
     router.push("/");
     router.refresh();
   };
