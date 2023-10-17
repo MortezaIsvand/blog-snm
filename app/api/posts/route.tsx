@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const search = searchParams.get("search") || undefined;
+  const page = parseInt(searchParams.get("page")!) || 1;
   let whereClause = {};
   if (search) {
     whereClause = {
@@ -25,6 +26,8 @@ export async function GET(req: NextRequest) {
       orderBy: {
         updatedAt: "desc",
       },
+      take: 10,
+      skip: (page - 1) * 10,
     });
     return NextResponse.json(posts, { status: 200 });
   } catch (error) {
