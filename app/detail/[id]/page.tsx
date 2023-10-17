@@ -32,7 +32,6 @@ const getPost = async ({ params }: Props): Promise<Post> => {
 
 const DetailPage = async ({ params }: Props) => {
   const post = await getPost({ params });
-  console.log("****posts****: ", post);
   return (
     <div className="flex flex-col gap-4 max-w-lg">
       <BackButton href="/" />

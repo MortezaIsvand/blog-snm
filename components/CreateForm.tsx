@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Tag } from "@prisma/client";
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -15,14 +16,7 @@ const schema = z.object({
 
 type formData = z.infer<typeof schema>;
 
-const getTags = async (): Promise<Tag[]> => {
-  const res = await fetch(`${process.env.API_URL}/api/tags`, {
-    cache: "no-store",
-  });
-  return res.json();
-};
-
-const CreateForm = async () => {
+const CreateForm = ({ tags }: { tags: Tag[] }) => {
   const router = useRouter();
   const {
     handleSubmit,
@@ -31,17 +25,8 @@ const CreateForm = async () => {
   } = useForm<formData>({
     resolver: zodResolver(schema),
   });
-  const tags = await getTags();
-
   const onSubmit = async (data: formData) => {
-    // await axios.post(`${process.env.API_URL}/api/posts`, data);
-    await fetch(`${process.env.API_URL}/api/posts`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    await axios.post(`/api/posts`, data);
     router.push("/");
     router.refresh();
   };

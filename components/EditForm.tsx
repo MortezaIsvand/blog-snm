@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -30,7 +31,7 @@ interface Props {
   };
 }
 
-const EditForm = ({ tags, initialValues, params }: Props) => {
+const EditForm = ({ initialValues, params, tags }: Props) => {
   const router = useRouter();
   const { title, content, tag } = initialValues;
   const sdf = { title, content, tag };
@@ -42,16 +43,8 @@ const EditForm = ({ tags, initialValues, params }: Props) => {
     resolver: zodResolver(schema),
     defaultValues: sdf,
   });
-
   const onSubmit = async (data: formData) => {
-    // await axios.patch(`${process.env.API_URL}/api/posts/${params.id}`, data);
-    await fetch(`${process.env.API_URL}/api/posts/${params.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    await axios.patch(`/api/posts/${params.id}`, data);
     router.push("/");
     router.refresh();
   };

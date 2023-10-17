@@ -52,7 +52,7 @@ export async function PATCH(req: NextRequest, { params }: Props) {
       },
     });
 
-    return NextResponse.json(post, { status: 200 });
+    return NextResponse.json(post, { status: 201 });
   } catch (error) {
     return NextResponse.json(
       { message: "Could not update the post" },
@@ -60,9 +60,6 @@ export async function PATCH(req: NextRequest, { params }: Props) {
     );
   }
 }
-
-
-
 
 export async function DELETE(req: NextRequest, { params }: Props) {
   try {
