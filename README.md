@@ -2,7 +2,23 @@
 
 This is a blog app built using Next.js, Prisma, React Hook Form, Zod, DaisyUI, and NextAuth. It provides a RESTful API for creating, editing, deleting, and retrieving blog posts. The app also includes server-side pagination, server-side filtering with a search input, and server-side data fetching. The layout and design of the website are enhanced with DaisyUI.
 
+## Visit website 
+
+👉 [blog-snmlo.vercel.app](blog-snmlo.vercel.app)
+
+HomePage
+<img width="934" alt="homePage" src="https://github.com/MortezaIsvand/blog-snm/assets/107297151/9bde618f-60b9-4cae-a122-518dde7aedc6">
+
+DetailPage
+<img width="950" alt="detailPage" src="https://github.com/MortezaIsvand/blog-snm/assets/107297151/2f44ab39-9b20-41e9-9ef4-aa06dd35ba82">
+
+
+CreatePage
+<img width="956" alt="createPage" src="https://github.com/MortezaIsvand/blog-snm/assets/107297151/366aad8d-5782-472f-aa49-cfd907931cdd">
+
+
 ## Features
+
 
 - RESTful API for CRUD operations on blog posts
 - Server-side pagination for efficient rendering of large data sets
