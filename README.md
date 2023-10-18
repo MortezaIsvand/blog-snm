@@ -51,7 +51,7 @@ git clone https://github.com/mortezaisvand/blog-snm.git
 2. Change into the project directory:
 
 ```shell
-cd blog
+cd blog-snm
 ```
 
 3. Install the dependencies:
