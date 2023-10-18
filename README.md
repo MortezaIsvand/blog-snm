@@ -36,6 +36,7 @@ This blog app utilizes several libraries to enhance its functionality. Here are 
 - Zod: A TypeScript-first schema validation library used for validating form inputs and data.
 - DaisyUI: A lightweight UI component library for Tailwind CSS that provides a set of ready-to-use components and utilities.
 - NextAuth: A library for handling authentication and authorization in Next.js applications.
+- Tailwind CSS: A highly customizable, low-level CSS framework that provides utility classes for styling elements, enabling rapid custom UI development without predefined component classes.
 
 These libraries have been chosen for their reliability, ease of use, and robust feature sets, and they play a crucial role in making this blog app efficient and user-friendly.
 
