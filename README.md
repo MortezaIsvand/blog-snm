@@ -45,7 +45,7 @@ These libraries have been chosen for their reliability, ease of use, and robust 
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/mortezaisvand/blog.git
+git clone https://github.com/mortezaisvand/blog-snm.git
 ```
 
 2. Change into the project directory:
