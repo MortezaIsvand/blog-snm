@@ -4,7 +4,6 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import SearchInput from "./SearchInput";
 
-
 const NavBar = async () => {
   const session = await getServerSession(nextOpts);
   return (
@@ -16,9 +15,9 @@ const NavBar = async () => {
           </Link>
         </div>
         <div className="flex-none gap-2">
-          <SearchInput  />
+          <SearchInput />
           {session ? (
-            <div className="flex gap-8">
+            <div className="flex gap-8 max-sm:gap-1">
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
@@ -43,7 +42,7 @@ const NavBar = async () => {
                   </li>
                 </ul>
               </div>
-              <Link href={"/create"} className="btn btn-neutral">
+              <Link href={"/create"} className="btn btn-neutral ">
                 Create
               </Link>
             </div>

@@ -26,7 +26,7 @@ const EditPage = async ({ params }: Props) => {
   const initialValues = await getInitialValues({ params });
   const tags = await getTags();
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <BackButton href={`/detail/${params.id}`} />
       <EditForm tags={tags} initialValues={initialValues} params={params} />
     </div>

@@ -18,8 +18,8 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="lg:px-16 px-4 py-6 ">
-          <NavBar  />
+        <nav className="lg:px-16 px-4 py-6 max-sm:px-1 ">
+          <NavBar />
         </nav>
         <main className="lg:px-16 px-4">{children}</main>
       </body>
