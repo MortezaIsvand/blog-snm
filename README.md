@@ -4,7 +4,7 @@ This is a blog app built using Next.js, Prisma, React Hook Form, Zod, DaisyUI, a
 
 ## Visit website 
 
-👉 [blog-snmlo.vercel.app](blog-snmlo.vercel.app)
+👉 [blog-snmlo.vercel.app](https://blog-snmlo.vercel.app)
 
 HomePage
 <img width="934" alt="homePage" src="https://github.com/MortezaIsvand/blog-snm/assets/107297151/9bde618f-60b9-4cae-a122-518dde7aedc6">
