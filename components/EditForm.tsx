@@ -51,7 +51,7 @@ const EditForm = ({ initialValues, params, tags }: Props) => {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <h1 className="text-3xl text-left w-96">Edit post</h1>
+      <h1 className="text-3xl text-right w-96">ویرایش پست</h1>
       <form
         className="flex flex-col gap-2 w-full items-center"
         onSubmit={handleSubmit(onSubmit)}
@@ -59,14 +59,14 @@ const EditForm = ({ initialValues, params, tags }: Props) => {
         <input
           {...register("title")}
           type="text"
-          placeholder="Title"
+          placeholder="عنوان"
           className="input input-bordered w-96"
         />
         {errors.title && <p className="text-red-500">{errors.title.message}</p>}
         <textarea
           {...register("content")}
           className="textarea textarea-bordered w-96 h-40 "
-          placeholder="Content"
+          placeholder="محتوا"
         ></textarea>
         {errors.content && (
           <p className="text-red-500">{errors.content.message}</p>
@@ -77,7 +77,7 @@ const EditForm = ({ initialValues, params, tags }: Props) => {
           className="select select-bordered w-96"
           defaultValue={""}
         >
-          <option>tags</option>
+          <option>انتخاب تگ</option>
           {tags?.map((tag) => (
             <option value={tag.id} key={tag.id}>
               {tag.name}
@@ -87,7 +87,7 @@ const EditForm = ({ initialValues, params, tags }: Props) => {
         {isSubmitting ? (
           <Spinner />
         ) : (
-          <button className="btn btn-neutral mt-2 w-96">Update</button>
+          <button className="btn btn-neutral mt-2 w-96">ویرایش</button>
         )}
       </form>
     </div>

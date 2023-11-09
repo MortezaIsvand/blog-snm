@@ -33,7 +33,7 @@ const CreateForm = ({ tags }: { tags: Tag[] }) => {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <h1 className="text-3xl text-left w-96">Add new post</h1>
+      <h1 className="text-3xl w-96 text-right">ایجاد پست جدید</h1>
       <form
         className="flex flex-col gap-2 w-full items-center"
         onSubmit={handleSubmit(onSubmit)}
@@ -41,14 +41,14 @@ const CreateForm = ({ tags }: { tags: Tag[] }) => {
         <input
           {...register("title")}
           type="text"
-          placeholder="Title"
+          placeholder="عنوان"
           className="input input-bordered w-96"
         />
         {errors.title && <p className="text-red-500">{errors.title.message}</p>}
         <textarea
           {...register("content")}
           className="textarea textarea-bordered w-96 h-40 "
-          placeholder="Content"
+          placeholder="محتوا"
         ></textarea>
         {errors.content && (
           <p className="text-red-500">{errors.content.message}</p>
@@ -59,7 +59,7 @@ const CreateForm = ({ tags }: { tags: Tag[] }) => {
           className="select select-bordered w-96"
           defaultValue={""}
         >
-          <option>tags</option>
+          <option>انتخاب تگ</option>
           {tags?.map((tag) => (
             <option value={tag.id} key={tag.id}>
               {tag.name}
@@ -69,7 +69,7 @@ const CreateForm = ({ tags }: { tags: Tag[] }) => {
         {isSubmitting ? (
           <Spinner />
         ) : (
-          <button className="btn btn-neutral mt-2 w-96">Create</button>
+          <button className="btn btn-neutral mt-2 w-96">ایجاد</button>
         )}
       </form>
     </div>

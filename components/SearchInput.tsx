@@ -13,8 +13,8 @@ const SearchInput = () => {
     <div className="form-control">
       <input
         type="text"
-        placeholder="Search"
-        className="input input-bordered w-24 max-sm:w-40 md:w-auto"
+        placeholder="جستوجو"
+        className="input input-bordered w-24 max-sm:w-40 md:w-auto text-right"
         onChange={onChange}
       />
     </div>

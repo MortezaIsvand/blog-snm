@@ -42,7 +42,7 @@ const DetailPage = async ({ params }: Props) => {
       <div className="flex justify-start gap-4 items-end max-w-sm">
         <div className="flex items-center gap-4">
           <Link href={`/edit/${post.id}`} className="btn btn-warning">
-            <Pencil /> Edit
+            <Pencil /> ویرایش
           </Link>
           <DeleteButton params={params} />
         </div>

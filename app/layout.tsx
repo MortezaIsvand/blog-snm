@@ -1,9 +1,9 @@
 import NavBar from "@/components/NavBar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Vazirmatn } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const vazir = Vazirmatn({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,12 +16,14 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="fa_IR">
+      <body className={vazir.className}>
         <nav className="lg:px-16 px-4 py-6 max-sm:px-1 ">
           <NavBar />
         </nav>
-        <main className="lg:px-16 px-4">{children}</main>
+        <main className="lg:px-16 px-4" dir="rtl">
+          {children}
+        </main>
       </body>
     </html>
   );

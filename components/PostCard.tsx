@@ -33,7 +33,7 @@ const PostCard = ({ post }: Post) => {
             href={`/detail/${post.id}`}
             className="btn btn-neutral normal-case"
           >
-            Read more...
+            بیشتر بخوان...
           </Link>
         </div>
       </div>

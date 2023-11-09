@@ -21,7 +21,7 @@ const DeleteButton = ({ params }: Props) => {
   return (
     <button onClick={() => handleClick()} className="btn btn-error">
       <Trash2 />
-      Delete
+      حذف
     </button>
   );
 };

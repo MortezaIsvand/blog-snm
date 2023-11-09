@@ -30,25 +30,25 @@ const NavBar = async () => {
                 >
                   <li>
                     <Link href={"/profile"} className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
+                      پروفایل
+                      <span className="badge">جدید</span>
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/settings"}>Settings</Link>
+                    <Link href={"/settings"}>تنظیمات</Link>
                   </li>
                   <li>
-                    <Link href={"/api/auth/signout"}>Logout</Link>
+                    <Link href={"/api/auth/signout"}>خروج</Link>
                   </li>
                 </ul>
               </div>
               <Link href={"/create"} className="btn btn-neutral ">
-                Create
+                ایجاد
               </Link>
             </div>
           ) : (
             <Link href={"/api/auth/signin"} className="btn btn-neutral">
-              Login
+              ورود
             </Link>
           )}
         </div>
